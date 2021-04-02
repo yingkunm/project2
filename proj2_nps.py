@@ -43,8 +43,8 @@ class NationalSite:
         self.phone = phone
         self.url = url
     
-    def info(self):
-        return(self.name + " (" + self.address + "): " + self.address + self.zipcode)
+    def info(self): 
+        return(self.name + " (" + self.category + "): " + self.address + " " + self.zipcode)
         
 
 
@@ -239,8 +239,7 @@ def print_state_list_with_cache():
                 site_urls = []
                 for i in statelist:
                     site_url = i.url
-                    information = i.name + ' (' + i.category +'): ' + i.address + "" + i.zipcode
-                    statelist_info.append(information)
+                    statelist_info.append(i.info())
                     site_urls.append(site_url)
                     print("Fetching")
                 CACHE_DICT[statename] = {}
